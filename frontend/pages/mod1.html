@@ -1,0 +1,78 @@
+
+<div class="container" ng-controller="mod1Ctrl" >
+<h2> SENTIMENT ABOUT FAMOUS PEOPLE</h2>
+
+  <div class="btn-group btn-group-justified" role="group" aria-label="Button group with nested dropdown">
+    <div class="btn-group" role="group">
+      <label for="category">SELECT CATEGORY *:</label>
+      <select id="btnGroupDrop1" id ="category" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-model="$scope.scat" >
+      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+
+        <option class="dropdown-item btn-default" ng-repeat="cat in category" >{{cat}}</option>
+        
+      </div>
+      </select>
+    </div>
+     <div class="btn-group" role="group">
+      <label for="member">SELECT MEMBER *:</label>
+      <select id="btnGroupDrop1" id="member" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" ng-model="$scope.id" aria-haspopup="true" aria-expanded="false" ng-change="load($scope.id)"
+      data-ng-options="data.name for data in datas| filter:{category:$scope.scat}: true">
+      <!-- <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <option class="dropdown-item btn-default" ng-repeat="data in datas" ng-if="data.category==$scope.scat || $scope.scat=='ALL' "  value={{data.id}} > {{data.name}}
+        </option>        
+      </div> -->
+      </select>
+    </div> 
+    <!-- <select ng-model="blisterPackTemplateSelected" ng-change="changedValue(blisterPackTemplateSelected)" 
+            data-ng-options="blisterPackTemplate as blisterPackTemplate.name for blisterPackTemplate in blisterPackTemplates">
+      <option value="">Select Account</option>
+    </select> -->
+  </div> 
+<div  style="height:20px;"></div>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 row" >{{info[0]}}</h1>
+  
+    <p class="col-lg-10 small" style="text-align: justify;  word-wrap: break-word;" >{{info[1]}}</p>
+
+    <img ng-src=""  class="col-lg-2" id="img">
+  </div>
+</div>
+
+<div  style="height:50px;"></div>
+
+<div class="row" >
+  <div id="play1"></div>
+  <div class=" col-lg-push-1 col-lg-12" id="rts"></div>
+</div>
+<div  style="height:50px;"></div>
+<div id="play2"></div>
+<div class="row" >
+  <div class=" col-lg-push-3 col-lg-4" id="pie"></div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

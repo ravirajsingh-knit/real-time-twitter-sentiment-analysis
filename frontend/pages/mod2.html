@@ -1,0 +1,15 @@
+<div class="container" ng-controller="mod2Ctrl" >
+	<h2>TRENDS FROM INDIA</h2>
+	<div class="row">
+		<iframe src="https://telepath.pythonanywhere.com/bar" height="600" class="col-lg-12"></iframe>	
+	</div>
+	<div  style="height:50px;"></div>
+	<div class="row">
+	<h4>SEARCH ABOUT TRENDS</h4>
+	<div ng-repeat="data in trends" class=" col-lg-3">
+	<a class="btn  btn-lg  btn-info btn-round-lg"  ng-href={{data.url}}>{{data.name}}</a>
+	<br>
+	</div>
+	
+	</div>
+</div>

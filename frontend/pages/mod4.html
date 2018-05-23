@@ -1,0 +1,44 @@
+<div class="container">
+	<h2 >WORLD TRENDS</h2>
+	<div id="map_canvas" ng-controller="mod4Ctrl">
+        <div class="btn-group btn-group-justified" role="group" aria-label="Button group with nested dropdown">
+    <div class="btn-group" role="group">
+      <label for="country">SELECT COUNTRY *:</label>
+      <select id="btnGroupDrop1" id="country" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-model="$scope.con" ng-change="pplay($scope.con)" >
+      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <option class="dropdown-item btn-default" ng-repeat="cat in country track by $index" >{{cat}}</option>
+        
+      </div>
+      </select>
+    </div>
+     <div class="btn-group" role="group">
+      <label for="place">SELECT PLACE *:</label>
+      <select id="btnGroupDrop1" id="place" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" ng-model="$scope.idp" aria-haspopup="true" aria-expanded="false" ng-change="loadplay($scope.idp)"
+      data-ng-options="data.name for data in trends | filter:{country:$scope.con}: true">
+      <!-- <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <option class="dropdown-item btn-default" ng-repeat="data in datas" ng-if="data.category==$scope.scat || $scope.scat=='ALL' "  value={{data.id}} > {{data.name}}
+        </option>        
+      </div> -->
+      </select>
+    </div> 
+    <!-- <select ng-model="blisterPackTemplateSelected" ng-change="changedValue(blisterPackTemplateSelected)" 
+            data-ng-options="blisterPackTemplate as blisterPackTemplate.name for blisterPackTemplate in blisterPackTemplates">
+      <option value="">Select Account</option>
+    </select> -->
+
+  </div> 
+  <div  style="height:50px;"></div>
+  <div class="container">
+  <div class="row" id="barchart">	
+  </div> 
+  <div  style="height:50px;"></div>
+<div class="row">
+	<div ng-repeat="data in allplace" class="col-lg-3">
+	<a class="btn  btn-lg  btn-info btn-round-lg" ng-href={{data.url}}>{{data.name}}</a>
+	</div>
+
+
+</div>
+</div>
+ </div>
+ 
